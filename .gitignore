@@ -1,0 +1,67 @@
+# ==========================================
+# .gitignore para proyectos de Unity
+# ==========================================
+
+# Carpetas que Unity regenera solo (NO se suben, pesan mucho)
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+/[Mm]emoryCaptures/
+/[Rr]ecordings/
+
+# Carpeta de compilaciones (el .exe se entrega aparte, no en el repo)
+/[Ee]xport/
+
+# Asset Store tools
+/[Aa]ssets/AssetStoreTools*
+
+# Plugins de Visual Studio Code
+.vscode/
+
+# Gradle cache (si se exporta a Android)
+.gradle/
+
+# Archivos autogenerados por Visual Studio / Rider / MonoDevelop
+.vs/
+.idea/
+.consulo/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# Metadatos de archivos que no deben subirse
+*.pidb.meta
+*.pdb.meta
+*.mdb.meta
+
+# Informes de crash
+sysinfo.txt
+
+# Builds
+*.apk
+*.aab
+*.unitypackage
+*.app
+
+# Crashlytics
+crashlytics-build.properties
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+desktop.ini
