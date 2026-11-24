@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class Terminal : MonoBehaviour
 {
     public string siguienteEscena;
+    public AudioClip sonido;
 
     void OnTriggerEnter2D(Collider2D otro)
     {
@@ -12,6 +13,7 @@ public class Terminal : MonoBehaviour
         if (jugador != null)
         {
             Puntuacion.puntos += 100;
+            Sonido.Reproducir(sonido);
             SceneManager.LoadScene(siguienteEscena);
         }
     }

@@ -4,6 +4,7 @@ public class Dron : MonoBehaviour
 {
     public float tiempoPatrulla;
     public float velocidad;
+    public AudioClip sonidoExplosion;
 
     float temporizador;
     int direccion;
@@ -87,6 +88,7 @@ public class Dron : MonoBehaviour
         if (muerto) return;
         muerto = true;
         Puntuacion.puntos += 50;
+        Sonido.Reproducir(sonidoExplosion);
         GetComponent<Collider2D>().enabled = false;
         anim.SetBool("Muerto", true);
     }

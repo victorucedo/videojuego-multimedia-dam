@@ -1,19 +1,17 @@
 using UnityEngine;
 
-// El láser se enciende y se apaga cada cierto tiempo
+// El láser se enciende y se apaga cada cierto tiempo.
+// El "rayo" es un objeto hijo con el dibujo, la colisión (Peligro) y la luz.
 public class Laser : MonoBehaviour
 {
     public float tiempoCambio;
+    public GameObject rayo;
 
     float temporizador;
-    SpriteRenderer sprite;
-    BoxCollider2D caja;
 
     void Start()
     {
         temporizador = tiempoCambio;
-        sprite = GetComponent<SpriteRenderer>();
-        caja = GetComponent<BoxCollider2D>();
     }
 
     void Update()
@@ -21,8 +19,7 @@ public class Laser : MonoBehaviour
         temporizador -= Time.deltaTime;
         if (temporizador < 0)
         {
-            sprite.enabled = !sprite.enabled;
-            caja.enabled = sprite.enabled;
+            rayo.SetActive(!rayo.activeSelf);
             temporizador = tiempoCambio;
         }
     }

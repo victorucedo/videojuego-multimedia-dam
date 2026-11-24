@@ -37,6 +37,7 @@ Año 2087. Kai, una repartidora con un implante robado, huye de la corporación 
 ## 🛠️ Tecnología
 - **Motor:** Unity 2022.3.62f3
 - **Lenguaje:** C#
+- **Render:** URP 2D (Universal Render Pipeline) con luces 2D
 
 > ⚠️ Los dos debemos usar **exactamente la misma versión de Unity** para evitar problemas al abrir el proyecto.
 
@@ -61,13 +62,24 @@ Año 2087. Kai, una repartidora con un implante robado, huye de la corporación 
 | `CamaraSigueJugador` | La cámara sigue al jugador de forma suave (`Lerp`) |
 | `Dron` | Enemigo que patrulla; hace daño al tocarlo; explota si le disparas o lo pisas |
 | `Peligro` | Hace daño al tocarlo (charcos y láseres) |
-| `Laser` | Enciende y apaga el láser cada cierto tiempo |
+| `Laser` | Enciende y apaga el láser cada cierto tiempo (activa/desactiva su hijo `Rayo`) |
 | `Credito` | Moneda: suma puntos |
 | `ChipSalto` / `Bateria` | Power-ups: super salto / +1 vida |
 | `Terminal` | Meta del nivel: carga la siguiente escena |
 | `Puntuacion` | Guarda los puntos entre escenas (`static`) |
 | `Marcador` | Muestra vida y puntos en pantalla |
 | `Pantalla` | Menú, Victoria y Derrota |
+| `Sonido` | Reproduce un efecto de sonido desde cualquier script (`static`, como `Puntuacion`) |
+
+## 💡 Iluminación (URP 2D)
+- **Luz Global** oscura y azulada en los niveles: el ambiente es de noche.
+- **Luces puntuales** (Light 2D): sobre Kai, en el fogonazo del disparo, ojo rojo de los drones, láseres, charcos, créditos, power-ups, terminal y carteles de neón.
+- **Farolas** que alternan cian y magenta a lo largo del nivel, creando zonas de luz y de sombra.
+- El cielo y los edificios lejanos usan material *Sprite-Unlit* (no les afecta la luz); la capa de edificios más cercana usa *Sprite-Lit* para que se vean los focos de luz.
+
+## 🔊 Audio
+- **Efectos** (con `Sonido.Reproducir(clip)`): salto, disparo, daño, explosión del dron, recoger crédito, power-ups y hackear el terminal.
+- **Ambiente** distinto por zona: un objeto `Ambiente` con un `AudioSource` en bucle (sin código): zumbido grave de ciudad en el Nivel 1, zumbido industrial en el Nivel 2 y uno suave en los menús.
 
 ## 🎞️ Animator
 - **Jugador** (`Animations/Player/Player.controller`): Idle, Run, Jump, Disparar y Herido. Parámetros bool `Moviendo`, `Saltando`, `Atacando`, `Herido`. La animación **Disparar** tiene dos eventos: `Disparo` (hace el daño) y `FinAtaque`.
@@ -89,3 +101,5 @@ El `.exe` se genera en la carpeta `Build/` (no se sube al repositorio). El minim
 | Asset | Autor | Enlace | Licencia |
 |-------|-------|--------|----------|
 | Warped City | ansimuz | https://ansimuz.itch.io/warped-city | CC0 (música: crédito a Pascal Belisle) |
+| Sci-Fi Sounds | Kenney | https://www.kenney.nl/assets/sci-fi-sounds | CC0 |
+| Orbitron (fuente) | Matt McInerney | https://fonts.google.com/specimen/Orbitron | SIL Open Font License |

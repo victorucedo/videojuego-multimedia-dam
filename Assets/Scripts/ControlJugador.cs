@@ -21,6 +21,10 @@ public class ControlJugador : MonoBehaviour
     public float duracionSuperSalto;
     public float alturaVacio;
 
+    public AudioClip sonidoSalto;
+    public AudioClip sonidoDisparo;
+    public AudioClip sonidoDanno;
+
     Vector3 movimiento;
     Rigidbody2D cuerpo;
     SpriteRenderer sprite;
@@ -79,6 +83,7 @@ public class ControlJugador : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && EstaEnElSuelo())
         {
             saltando = true;
+            Sonido.Reproducir(sonidoSalto);
         }
     }
 
@@ -238,6 +243,7 @@ public class ControlJugador : MonoBehaviour
     public void Disparo()
     {
         // Enseñamos el fogonazo delante del arma
+        Sonido.Reproducir(sonidoDisparo);
         fogonazo.SetActive(true);
         fogonazo.transform.localPosition = new Vector3(DireccionMirada().x * 1.6f, -0.2f, 0);
         fogonazo.GetComponent<SpriteRenderer>().flipX = sprite.flipX;
@@ -275,6 +281,7 @@ public class ControlJugador : MonoBehaviour
         if (contadorInvencible > 0) return;
 
         QuitarVida(cuanto);
+        Sonido.Reproducir(sonidoDanno);
         contadorAturdido = tiempoAturdido;
 
         // Si nos golpean mientras disparamos, el ataque se cancela
