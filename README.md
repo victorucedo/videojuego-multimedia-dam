@@ -66,6 +66,7 @@ Año 2087. Kai, una repartidora con un implante robado, huye de la corporación 
 | `Credito` | Moneda: suma puntos |
 | `ChipSalto` / `Bateria` | Power-ups: super salto / +1 vida |
 | `Terminal` | Meta del nivel: carga la siguiente escena |
+| `Checkpoint` | Antena: al tocarla guarda el punto de reaparición del jugador y enciende su luz |
 | `Puntuacion` | Guarda los puntos entre escenas (`static`) |
 | `Marcador` | Muestra vida y puntos en pantalla |
 | `Pantalla` | Menú, Victoria y Derrota |
@@ -76,6 +77,17 @@ Año 2087. Kai, una repartidora con un implante robado, huye de la corporación 
 - **Luces puntuales** (Light 2D): sobre Kai, en el fogonazo del disparo, ojo rojo de los drones, láseres, charcos, créditos, power-ups, terminal y carteles de neón.
 - **Farolas** que alternan cian y magenta a lo largo del nivel, creando zonas de luz y de sombra.
 - El cielo y los edificios lejanos usan material *Sprite-Unlit* (no les afecta la luz); la capa de edificios más cercana usa *Sprite-Lit* para que se vean los focos de luz.
+
+## 🧱 Niveles (Tilemap)
+- Cada nivel tiene un objeto `Nivel` con un **Grid** y tres **Tilemaps**:
+  - `Fachada`: muros y ventanas de fondo (solo decoración).
+  - `Suelo`: el suelo y las plataformas, en la capa **Suelo**, con `TilemapCollider2D` + `CompositeCollider2D` (un solo collider para todo el suelo).
+  - `Neon`: borde de neón cian encima de las plataformas (material *Unlit*, siempre brilla).
+- Los tiles están en `Assets/Art/Tiles` (recortados del tileset de Warped City).
+- **Checkpoint** a mitad de cada nivel: si caes al vacío reapareces en la última antena tocada.
+- **Carteles de neón animados** (prefabs en `Prefabs/Carteles`, con su Animator y una luz 2D).
+- **Lluvia**: sistema de partículas hijo de la cámara.
+- Los agujeros del suelo tienen un fondo oscuro (`Abismos`) para que se vean como un precipicio.
 
 ## 🔊 Audio
 - **Efectos** (con `Sonido.Reproducir(clip)`): salto, disparo, daño, explosión del dron, recoger crédito, power-ups y hackear el terminal.

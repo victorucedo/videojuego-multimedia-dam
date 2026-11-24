@@ -435,7 +435,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidad: 8
-  fuerzaSalto: 1000
+  fuerzaSalto: 1050
   distCaja: 2.05
   tamannoCaja: {x: 0.8, y: 0.2}
   capaSuelo:

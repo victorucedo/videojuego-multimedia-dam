@@ -32,7 +32,7 @@ public class ControlJugador : MonoBehaviour
     bool saltando;
     bool atacando;
     Vector2 knockBack;
-    Vector3 posicionInicio;
+    Vector3 puntoReaparicion;
     float contadorInvencible;
     float contadorAturdido;
     float contadorSuperSalto;
@@ -42,7 +42,7 @@ public class ControlJugador : MonoBehaviour
         movimiento = new Vector3();
         knockBack = Vector2.zero;
         vida = vidaMax;
-        posicionInicio = transform.position;
+        puntoReaparicion = transform.position;
         cuerpo = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
@@ -165,10 +165,10 @@ public class ControlJugador : MonoBehaviour
 
     void ComprobarVacio()
     {
-        // Si se cae por un agujero, pierde una vida y vuelve al principio
+        // Si se cae por un agujero, pierde una vida y vuelve al último checkpoint
         if (transform.position.y < alturaVacio)
         {
-            transform.position = posicionInicio;
+            transform.position = puntoReaparicion;
             cuerpo.velocity = Vector2.zero;
             QuitarVida(1);
         }
@@ -312,6 +312,12 @@ public class ControlJugador : MonoBehaviour
         {
             vida = vidaMax;
         }
+    }
+
+    public void GuardarCheckpoint(Vector3 posicion)
+    {
+        // A partir de ahora, si se cae, reaparece aquí (un poco más arriba para no quedar dentro del suelo)
+        puntoReaparicion = posicion + Vector3.up;
     }
 
     public void ActivarSuperSalto()
