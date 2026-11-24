@@ -72,6 +72,7 @@ Año 2087. Kai, una repartidora con un implante robado, huye de la corporación 
 | `Puntuacion` | Guarda los puntos entre escenas (`static`) |
 | `Marcador` | HUD: vida en segmentos (la última en rojo) y créditos |
 | `Pantalla` | Menú, Victoria y Derrota: texto, "Pulsa ENTER" parpadeando y récord con `PlayerPrefs` |
+| `Intro` | Cuenta la historia antes del Nivel 1: las frases salen letra a letra (`Substring`); ENTER completa o pasa de frase |
 | `Pausa` | ESC pausa el juego con `Time.timeScale = 0`; M vuelve al menú |
 | `Fundido` | Imagen negra que se aclara al empezar cada escena y se oscurece antes de cambiar (`SceneManager.LoadScene`) |
 | `Sonido` | Reproduce un efecto de sonido desde cualquier script (`static`, como `Puntuacion`) |
@@ -114,7 +115,7 @@ Año 2087. Kai, una repartidora con un implante robado, huye de la corporación 
 - **Dron** (`Animations/Dron/Dron.controller`): Volar → Explotar (parámetro `Muerto`). La animación **Explotar** tiene el evento `Destruir`.
 
 ## 🎬 Escenas
-`Menu` → `Nivel1` → `Nivel2` → `Victoria` (o `Derrota` si te quedas sin vidas).
+`Menu` → `Intro` → `Nivel1` → `Nivel2` → `Victoria` (o `Derrota` si te quedas sin vidas).
 
 ## 📦 Ejecutable
 El `.exe` se genera en la carpeta `Build/` (no se sube al repositorio). El minimanual está en `docs/LEEME.txt`.
