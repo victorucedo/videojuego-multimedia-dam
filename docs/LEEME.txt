@@ -21,7 +21,8 @@ CONTROLES
   ESPACIO ................................. Saltar
   J ....................................... Disparar
   ENTER ................................... Empezar / continuar (en los menús)
-  ESC ..................................... Salir (en los menús)
+  ESC ..................................... Pausa (en el juego) / Salir (en los menús)
+  M ....................................... Volver al menú (estando en pausa)
 
 OBJETIVO
 --------
@@ -30,11 +31,13 @@ OBJETIVO
 
 VIDA Y DAÑO
 -----------
-  Empiezas cada nivel con 3 vidas. Pierdes una vida si:
+  Empiezas cada nivel con 3 vidas (las 3 barras de arriba a la izquierda;
+  la última se pone roja). Pierdes una vida si:
   - Tocas un DRON de lado o por debajo.
   - Pisas un CHARCO ELECTRIFICADO (azul).
   - Tocas un LÁSER rojo encendido (se encienden y apagan).
-  - Te caes por un agujero (vuelves al principio del nivel).
+  - Te caes por un agujero (vuelves al último CHECKPOINT:
+    la antena que se pone azul al pasar junto a ella).
   Después de un golpe eres invencible 1 segundo (el personaje se pone rojo).
   Si llegas a 0 vidas: GAME OVER.
 
@@ -51,8 +54,11 @@ PUNTUACIÓN
     saltando encima) ............... +50 puntos
   - Hackear un terminal ............ +100 puntos
   La puntuación final se muestra al ganar o al perder.
+  El RÉCORD se guarda aunque cierres el juego.
 
 CRÉDITOS
 --------
   Gráficos: "Warped City" de ansimuz (CC0)
   https://ansimuz.itch.io/warped-city
+  Sonidos: "Sci-Fi Sounds" de Kenney (CC0)
+  Fuente: Orbitron de Matt McInerney (SIL Open Font License)

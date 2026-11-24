@@ -23,7 +23,8 @@ Año 2087. Kai, una repartidora con un implante robado, huye de la corporación 
 | Saltar | Espacio |
 | Disparar | J |
 | Empezar / continuar | Enter |
-| Salir (en menús) | Esc |
+| Pausa (en el juego) / Salir (en menús) | Esc |
+| Volver al menú (en pausa) | M |
 
 ## ✅ Requisitos de la entrega
 - [ ] Documento de diseño (género, juegos analizados, definición del juego, assets referenciados)
@@ -68,8 +69,10 @@ Año 2087. Kai, una repartidora con un implante robado, huye de la corporación 
 | `Terminal` | Meta del nivel: carga la siguiente escena |
 | `Checkpoint` | Antena: al tocarla guarda el punto de reaparición del jugador y enciende su luz |
 | `Puntuacion` | Guarda los puntos entre escenas (`static`) |
-| `Marcador` | Muestra vida y puntos en pantalla |
-| `Pantalla` | Menú, Victoria y Derrota |
+| `Marcador` | HUD: vida en segmentos (la última en rojo) y créditos |
+| `Pantalla` | Menú, Victoria y Derrota: texto, "Pulsa ENTER" parpadeando y récord con `PlayerPrefs` |
+| `Pausa` | ESC pausa el juego con `Time.timeScale = 0`; M vuelve al menú |
+| `Fundido` | Imagen negra que se aclara al empezar cada escena y se oscurece antes de cambiar (`SceneManager.LoadScene`) |
 | `Sonido` | Reproduce un efecto de sonido desde cualquier script (`static`, como `Puntuacion`) |
 
 ## 💡 Iluminación (URP 2D)
@@ -88,6 +91,13 @@ Año 2087. Kai, una repartidora con un implante robado, huye de la corporación 
 - **Carteles de neón animados** (prefabs en `Prefabs/Carteles`, con su Animator y una luz 2D).
 - **Lluvia**: sistema de partículas hijo de la cámara.
 - Los agujeros del suelo tienen un fondo oscuro (`Abismos`) para que se vean como un precipicio.
+
+## 🖥️ Interfaz
+- Fuente **Orbitron** en toda la interfaz.
+- **HUD**: panel con la vida en 3 segmentos y los créditos; arriba en el centro el sector y el objetivo; a la derecha los controles.
+- **Menú** con el título en neón, panel de controles, "Pulsa ENTER" parpadeando y el récord.
+- **Pausa** con ESC y **fundido a negro** entre escenas (así también da tiempo a que suene el terminal).
+- **Récord** guardado con `PlayerPrefs` (se mantiene al cerrar el juego).
 
 ## 🔊 Audio
 - **Efectos** (con `Sonido.Reproducir(clip)`): salto, disparo, daño, explosión del dron, recoger crédito, power-ups y hackear el terminal.

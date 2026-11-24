@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class ControlJugador : MonoBehaviour
 {
@@ -301,7 +300,8 @@ public class ControlJugador : MonoBehaviour
         Debug.Log("Ouch!! Vida restante: " + vida);
         if (vida <= 0)
         {
-            SceneManager.LoadScene("Derrota");
+            // Fundido a negro y pantalla de derrota
+            FindObjectOfType<Fundido>().CambiarEscena("Derrota");
         }
     }
 
