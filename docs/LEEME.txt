@@ -1,0 +1,58 @@
+==========================================
+           NEON RUN - MINIMANUAL
+   Videojuego Multimedia - 2º DAM
+==========================================
+
+CÓMO EJECUTAR
+-------------
+Abre NeonRun.exe (deja todos los archivos y carpetas
+que lo acompañan en la misma carpeta).
+
+HISTORIA
+--------
+Año 2087. Kai, una repartidora con un implante robado,
+huye de la corporación OmniCorp. Tiene que atravesar los
+bajos fondos (Nivel 1) y la torre de OmniCorp (Nivel 2)
+hasta llegar a los terminales y hackearlos.
+
+CONTROLES
+---------
+  A / D  o  Flecha izquierda / derecha .... Moverse
+  ESPACIO ................................. Saltar
+  J ....................................... Disparar
+  ENTER ................................... Empezar / continuar (en los menús)
+  ESC ..................................... Salir (en los menús)
+
+OBJETIVO
+--------
+  - Llega al TERMINAL (la consola grande) al final de cada nivel.
+  - Nivel 1 -> Nivel 2 -> ¡Victoria!
+
+VIDA Y DAÑO
+-----------
+  Empiezas cada nivel con 3 vidas. Pierdes una vida si:
+  - Tocas un DRON de lado o por debajo.
+  - Pisas un CHARCO ELECTRIFICADO (azul).
+  - Tocas un LÁSER rojo encendido (se encienden y apagan).
+  - Te caes por un agujero (vuelves al principio del nivel).
+  Después de un golpe eres invencible 1 segundo (el personaje se pone rojo).
+  Si llegas a 0 vidas: GAME OVER.
+
+POWER-UPS
+---------
+  - CHIP (pantalla azul) ..... Super salto durante 8 segundos
+                               (el personaje se pone azul).
+  - BATERÍA (caja verde) ..... Recupera 1 vida (máximo 3).
+
+PUNTUACIÓN
+----------
+  - Crédito (orbe azul) ............ +10 puntos
+  - Destruir un dron (disparando o
+    saltando encima) ............... +50 puntos
+  - Hackear un terminal ............ +100 puntos
+  La puntuación final se muestra al ganar o al perder.
+
+CRÉDITOS
+--------
+  Gráficos: "Warped City" de ansimuz (CC0)
+  https://ansimuz.itch.io/warped-city
