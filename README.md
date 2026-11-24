@@ -60,11 +60,12 @@ Año 2087. Kai, una repartidora con un implante robado, huye de la corporación 
 | Script | Función |
 |--------|---------|
 | `ControlJugador` | Movimiento, salto (`AddForce`), suelo con `BoxCast` (capa **Suelo**), disparo con `BoxCast` (capa **Enemigo**) llamado desde un evento de animación, animaciones, vida, daño con empujón, caída al vacío y super salto |
-| `CamaraSigueJugador` | La cámara sigue al jugador de forma suave (`Lerp`) |
+| `CamaraSigueJugador` | La cámara sigue al jugador de forma suave (`Lerp`) y tiembla al recibir daño (`Random.insideUnitCircle`) |
+| `Parallax` | Las capas del fondo se desplazan a distinta velocidad (`Mathf.Repeat`) para dar profundidad |
 | `Dron` | Enemigo que patrulla; hace daño al tocarlo; explota si le disparas o lo pisas |
 | `Peligro` | Hace daño al tocarlo (charcos y láseres) |
 | `Laser` | Enciende y apaga el láser cada cierto tiempo (activa/desactiva su hijo `Rayo`) |
-| `Credito` | Moneda: suma puntos |
+| `Credito` | Moneda: suma puntos y flota arriba y abajo (`Mathf.Sin`) |
 | `ChipSalto` / `Bateria` | Power-ups: super salto / +1 vida |
 | `Terminal` | Meta del nivel: carga la siguiente escena |
 | `Checkpoint` | Antena: al tocarla guarda el punto de reaparición del jugador y enciende su luz |
@@ -98,6 +99,11 @@ Año 2087. Kai, una repartidora con un implante robado, huye de la corporación 
 - **Menú** con el título en neón, panel de controles, "Pulsa ENTER" parpadeando y el récord.
 - **Pausa** con ESC y **fundido a negro** entre escenas (así también da tiempo a que suene el terminal).
 - **Récord** guardado con `PlayerPrefs` (se mantiene al cerrar el juego).
+
+## ✨ Feedback visual
+- **Partículas** (prefabs en `Prefabs/Particulas`, se crean con `Instantiate` y se borran solas al acabar): chispas al recoger créditos y power-ups, explosión del dron y polvo al aterrizar.
+- **Temblor de cámara** cuando Kai pierde una vida.
+- **Créditos flotando** y **parallax** en el fondo de los niveles.
 
 ## 🔊 Audio
 - **Efectos** (con `Sonido.Reproducir(clip)`): salto, disparo, daño, explosión del dron, recoger crédito, power-ups y hackear el terminal.

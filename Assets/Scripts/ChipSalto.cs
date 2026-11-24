@@ -4,6 +4,7 @@ using UnityEngine;
 public class ChipSalto : MonoBehaviour
 {
     public AudioClip sonido;
+    public GameObject particulas;
 
     void OnTriggerEnter2D(Collider2D otro)
     {
@@ -12,6 +13,7 @@ public class ChipSalto : MonoBehaviour
         {
             jugador.ActivarSuperSalto();
             Sonido.Reproducir(sonido);
+            Instantiate(particulas, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }

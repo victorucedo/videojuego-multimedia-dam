@@ -447,6 +447,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   fogonazo: {fileID: 776120599955562159}
+  polvo: {fileID: 494789694784645689, guid: 4d39532983793b54e95aea83d196a7df, type: 3}
   vidaMax: 3
   vida: 0
   tiempoInvencible: 1.2

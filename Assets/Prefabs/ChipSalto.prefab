@@ -227,3 +227,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sonido: {fileID: 8300000, guid: 90b13b0b36694a94ab002c26cd6c9511, type: 3}
+  particulas: {fileID: 3817122149218413538, guid: c91abed2d9dc9a44dab284ee74b55ce3, type: 3}

@@ -269,3 +269,4 @@ MonoBehaviour:
   tiempoPatrulla: 2
   velocidad: 2
   sonidoExplosion: {fileID: 8300000, guid: 81f59db0095068e4b8c38d5c97d0211c, type: 3}
+  particulasExplosion: {fileID: 2576409433065717334, guid: 046e67da6c0b5ac4dbc96a828ad51256, type: 3}

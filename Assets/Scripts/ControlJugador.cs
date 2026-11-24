@@ -12,6 +12,7 @@ public class ControlJugador : MonoBehaviour
     public Vector2 tamannoAtaque;
     public LayerMask capaEnemigo;
     public GameObject fogonazo;
+    public GameObject polvo;
 
     public int vidaMax;
     public int vida;
@@ -35,6 +36,7 @@ public class ControlJugador : MonoBehaviour
     float contadorInvencible;
     float contadorAturdido;
     float contadorSuperSalto;
+    bool enSueloAntes;
 
     void Start()
     {
@@ -57,6 +59,7 @@ public class ControlJugador : MonoBehaviour
         ActualizarAnim();
         ActualizarContadores();
         ComprobarVacio();
+        ComprobarAterrizaje();
     }
 
     void LeerMovimiento()
@@ -160,6 +163,17 @@ public class ControlJugador : MonoBehaviour
         {
             sprite.color = Color.white;
         }
+    }
+
+    void ComprobarAterrizaje()
+    {
+        // Si en el frame anterior estaba en el aire y ahora toca el suelo: acaba de aterrizar
+        bool enSuelo = EstaEnElSuelo();
+        if (enSuelo && !enSueloAntes)
+        {
+            Instantiate(polvo, transform.position + Vector3.down * distCaja, Quaternion.identity);
+        }
+        enSueloAntes = enSuelo;
     }
 
     void ComprobarVacio()
@@ -297,6 +311,8 @@ public class ControlJugador : MonoBehaviour
     {
         vida -= cuanto;
         contadorInvencible = tiempoInvencible;
+        // La cámara tiembla al recibir daño
+        Camera.main.GetComponent<CamaraSigueJugador>().Temblar();
         Debug.Log("Ouch!! Vida restante: " + vida);
         if (vida <= 0)
         {

@@ -1090,6 +1090,7 @@ GameObject:
   m_Component:
   - component: {fileID: 384678566}
   - component: {fileID: 384678567}
+  - component: {fileID: 384678568}
   m_Layer: 0
   m_Name: Cielo
   m_TagString: Untagged
@@ -1158,12 +1159,27 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 80, y: 15}
+  m_Size: {x: 96, y: 15}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &384678568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 384678565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12906ea570431a24787de4aeeb2df95f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camara: {fileID: 480384277}
+  factor: 0.05
+  anchoTile: 8
 --- !u!1 &392075372
 GameObject:
   m_ObjectHideFlags: 0
@@ -1361,6 +1377,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jugador: {fileID: 362663993}
   suavizado: 6
+  fuerzaTemblor: 0.18
+  duracionTemblor: 0.25
 --- !u!81 &480384275
 AudioListener:
   m_ObjectHideFlags: 0
@@ -4544,6 +4562,7 @@ GameObject:
   m_Component:
   - component: {fileID: 799506119}
   - component: {fileID: 799506120}
+  - component: {fileID: 799506121}
   m_Layer: 0
   m_Name: Edificios lejanos
   m_TagString: Untagged
@@ -4612,12 +4631,27 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 81, y: 7.75}
+  m_Size: {x: 99, y: 7.75}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &799506121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 799506118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12906ea570431a24787de4aeeb2df95f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camara: {fileID: 480384277}
+  factor: 0.12
+  anchoTile: 9
 --- !u!1 &819163919
 GameObject:
   m_ObjectHideFlags: 0
@@ -4697,7 +4731,7 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
-    m_MaxSize: 40
+    m_MaxSize: 72
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1

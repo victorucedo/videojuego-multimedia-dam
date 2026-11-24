@@ -145,6 +145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sonido: {fileID: 8300000, guid: 90b13b0b36694a94ab002c26cd6c9511, type: 3}
+  particulas: {fileID: 1018271306773270275, guid: 47ef835183d86ec43bbdebf562c7f0c3, type: 3}
 --- !u!1 &6162287187920110416
 GameObject:
   m_ObjectHideFlags: 0
