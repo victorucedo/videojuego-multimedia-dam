@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 // Menú de pausa: ESC pausa o continúa, M vuelve al menú
 public class Pausa : MonoBehaviour
@@ -21,7 +22,8 @@ public class Pausa : MonoBehaviour
 
         if (panelPausa.activeSelf && Input.GetKeyDown(KeyCode.M))
         {
-            FindObjectOfType<Fundido>().CambiarEscena("Menu");
+            Time.timeScale = 1;
+            SceneManager.LoadScene("Menu");
         }
     }
 

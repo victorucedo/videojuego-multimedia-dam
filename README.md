@@ -2,7 +2,7 @@
 
 Videojuego de plataformas 2D hecho en Unity para el módulo de Multimedia (2º DAM, primer trimestre).
 
-Autores: Víctor Ucedo, (nombre del compañero)
+Autores: Víctor Ucedo, Alejandro Mosquera
 
 ## Descripción
 
@@ -40,6 +40,10 @@ Kai huye de la corporación OmniCorp a lo largo de dos niveles. Hay que llegar a
 
 ## Scripts
 
+Los scripts están divididos en dos carpetas.
+
+`Assets/Scripts/Juego`: la lógica del juego.
+
 | Script | Función |
 |--------|---------|
 | `ControlJugador` | Movimiento, salto, disparo, animaciones, vida, daño y power-ups del jugador |
@@ -53,12 +57,21 @@ Kai huye de la corporación OmniCorp a lo largo de dos niveles. Hay que llegar a
 | `Sonido` | Reproduce efectos de sonido (`static`) |
 | `Marcador` | HUD: vida y créditos |
 | `Pantalla` | Menú, Victoria y Derrota |
-| `Intro` | Texto de la historia antes del Nivel 1 |
+| `Intro` | Frases de la historia antes del Nivel 1 |
 | `Pausa` | Pausa con `Time.timeScale` |
-| `Fundido` | Fundido a negro entre escenas |
-| `CamaraSigueJugador` | Cámara que sigue al jugador y tiembla al recibir daño |
+| `CamaraSigueJugador` | Cámara que sigue al jugador |
+
+`Assets/Scripts/Efectos`: efectos visuales extra, hechos con ayuda de IA. Ningún script de `Juego` depende de ellos; si se quitan, el juego funciona igual.
+
+| Script | Función |
+|--------|---------|
+| `Fundido` | Fundido desde negro al empezar cada escena |
+| `Temblor` | La cámara tiembla cuando el jugador pierde vida |
+| `Flotar` | Los créditos suben y bajan |
+| `AnimacionHUD` | Parpadeo de la vida perdida y animación de los créditos |
+| `TextoParpadeante` | Parpadeo de "PULSA ENTER" |
 | `Parallax` | Movimiento de las capas del fondo |
-| `Parpadeo` | Carteles que parpadean |
+| `Parpadeo` | Carteles que fallan de vez en cuando |
 | `Vehiculo` | Coches del fondo |
 
 ## Ejecutable

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-// Cartel de neón que "falla": cada cierto tiempo (al azar) parpadea un momento
+// EFECTO (extra): Cartel de neón que "falla": cada cierto tiempo (al azar) parpadea un momento
 public class Parpadeo : MonoBehaviour
 {
     public float tiempoMin;

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-// Coche volador que cruza el fondo de la ciudad.
+// EFECTO (extra): Coche volador que cruza el fondo de la ciudad.
 // Es hijo del fondo (que va con la cámara): se mueve en horizontal y al salir por un lado vuelve por el otro.
 public class Vehiculo : MonoBehaviour
 {

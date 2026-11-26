@@ -4,10 +4,6 @@ public class CamaraSigueJugador : MonoBehaviour
 {
     public GameObject jugador;
     public float suavizado;
-    public float fuerzaTemblor;
-    public float duracionTemblor;
-
-    float contadorTemblor;
 
     void LateUpdate()
     {
@@ -17,18 +13,5 @@ public class CamaraSigueJugador : MonoBehaviour
 
         // Lerp: en cada frame la cámara recorre una parte del camino, así se mueve suave
         transform.position = Vector3.Lerp(transform.position, destino, suavizado * Time.deltaTime);
-
-        // Temblor: mientras dure, movemos la cámara un poco al azar
-        if (contadorTemblor > 0)
-        {
-            contadorTemblor -= Time.deltaTime;
-            Vector3 desplazamiento = Random.insideUnitCircle * fuerzaTemblor;
-            transform.position += desplazamiento;
-        }
-    }
-
-    public void Temblar()
-    {
-        contadorTemblor = duracionTemblor;
     }
 }

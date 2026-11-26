@@ -18,7 +18,7 @@ hasta llegar a los terminales y hackearlos.
 CONTROLES
 ---------
   A / D  o  Flecha izquierda / derecha .... Moverse
-  ESPACIO ................................. Saltar (mantenlo pulsado para saltar más alto)
+  ESPACIO ................................. Saltar
   J ....................................... Disparar
   ENTER ................................... Empezar / continuar (en los menús y en la intro)
   ESC ..................................... Pausa (en el juego) / Salir (en los menús)

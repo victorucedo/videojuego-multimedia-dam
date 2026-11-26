@@ -228,3 +228,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   siguienteEscena: 
   sonido: {fileID: 8300000, guid: 2a5acb33bbb8c9d4980d66c2d0076f82, type: 3}
+  tiempoEspera: 1

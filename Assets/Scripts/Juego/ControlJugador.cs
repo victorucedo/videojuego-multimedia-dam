@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ControlJugador : MonoBehaviour
 {
@@ -20,7 +21,6 @@ public class ControlJugador : MonoBehaviour
     public float tiempoAturdido;
     public float duracionSuperSalto;
     public float alturaVacio;
-    public float tiempoCoyote;
 
     public AudioClip sonidoSalto;
     public AudioClip sonidoDisparo;
@@ -38,8 +38,6 @@ public class ControlJugador : MonoBehaviour
     float contadorAturdido;
     float contadorSuperSalto;
     bool enSueloAntes;
-    float contadorCoyote;
-    bool cortarSalto;
 
     void Start()
     {
@@ -85,27 +83,10 @@ public class ControlJugador : MonoBehaviour
 
     void LeerSalto()
     {
-        // "Coyote time": un momento después de salir del borde todavía se puede saltar
-        if (EstaEnElSuelo())
-        {
-            contadorCoyote = tiempoCoyote;
-        }
-        else
-        {
-            contadorCoyote -= Time.deltaTime;
-        }
-
-        if (Input.GetKeyDown(KeyCode.Space) && contadorCoyote > 0)
+        if (Input.GetKeyDown(KeyCode.Space) && EstaEnElSuelo())
         {
             saltando = true;
-            contadorCoyote = 0;
             Sonido.Reproducir(sonidoSalto);
-        }
-
-        // Si suelta Espacio mientras sube, el salto es más corto
-        if (Input.GetKeyUp(KeyCode.Space) && cuerpo.velocity.y > 0)
-        {
-            cortarSalto = true;
         }
     }
 
@@ -236,13 +217,6 @@ public class ControlJugador : MonoBehaviour
             saltando = false;
         }
 
-        if (cortarSalto)
-        {
-            // Frenamos la subida a la mitad
-            cuerpo.velocity = new Vector2(cuerpo.velocity.x, cuerpo.velocity.y * 0.5f);
-            cortarSalto = false;
-        }
-
         if (knockBack != Vector2.zero)
         {
             cuerpo.velocity = Vector2.zero;
@@ -338,13 +312,10 @@ public class ControlJugador : MonoBehaviour
     {
         vida -= cuanto;
         contadorInvencible = tiempoInvencible;
-        // La cámara tiembla al recibir daño
-        Camera.main.GetComponent<CamaraSigueJugador>().Temblar();
         Debug.Log("Ouch!! Vida restante: " + vida);
         if (vida <= 0)
         {
-            // Fundido a negro y pantalla de derrota
-            FindObjectOfType<Fundido>().CambiarEscena("Derrota");
+            SceneManager.LoadScene("Derrota");
         }
     }
 

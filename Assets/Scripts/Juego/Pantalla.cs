@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 // Para las pantallas de Menú, Victoria y Derrota
@@ -6,7 +7,6 @@ public class Pantalla : MonoBehaviour
 {
     public Text texto;
     public Text textoRecord;
-    public Text textoPulsa;
     public string mensaje;
     public bool mostrarPuntos;
     public bool reiniciarPuntos;
@@ -41,12 +41,9 @@ public class Pantalla : MonoBehaviour
 
     void Update()
     {
-        // Parpadeo del "Pulsa ENTER": visible 0,6 s de cada segundo
-        textoPulsa.enabled = Mathf.Repeat(Time.time, 1) < 0.6f;
-
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            FindObjectOfType<Fundido>().CambiarEscena(siguienteEscena);
+            SceneManager.LoadScene(siguienteEscena);
         }
         if (Input.GetKeyDown(KeyCode.Escape))
         {

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-// Capa del fondo (hija de la cámara). Se desplaza un poco según avanza la cámara:
+// EFECTO (extra): Capa del fondo (hija de la cámara). Se desplaza un poco según avanza la cámara:
 // las capas lejanas se mueven menos que las cercanas y así se nota la profundidad.
 public class Parallax : MonoBehaviour
 {
