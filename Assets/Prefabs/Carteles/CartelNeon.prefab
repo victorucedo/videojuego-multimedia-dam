@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5540597079544281666}
   - component: {fileID: 8894032262592126935}
   - component: {fileID: 981412901865458062}
+  - component: {fileID: 3489456180045590652}
   m_Layer: 0
   m_Name: CartelNeon
   m_TagString: Untagged
@@ -107,6 +108,22 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3489456180045590652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3369426000812378093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4317fd49a148b2a4c9f942b0920e1bfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tiempoMin: 4
+  tiempoMax: 9
+  duracionFallo: 0.5
+  luz: {fileID: 7587678223369122195}
 --- !u!1 &3876995303746826169
 GameObject:
   m_ObjectHideFlags: 0

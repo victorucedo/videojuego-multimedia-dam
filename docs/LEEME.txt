@@ -18,7 +18,7 @@ hasta llegar a los terminales y hackearlos.
 CONTROLES
 ---------
   A / D  o  Flecha izquierda / derecha .... Moverse
-  ESPACIO ................................. Saltar
+  ESPACIO ................................. Saltar (mantenlo pulsado para saltar más alto)
   J ....................................... Disparar
   ENTER ................................... Empezar / continuar (en los menús y en la intro)
   ESC ..................................... Pausa (en el juego) / Salir (en los menús)
@@ -34,7 +34,7 @@ VIDA Y DAÑO
   Empiezas cada nivel con 3 vidas (las 3 barras de arriba a la izquierda;
   la última se pone roja). Pierdes una vida si:
   - Tocas un DRON de lado o por debajo.
-  - Pisas un CHARCO ELECTRIFICADO (azul).
+  - Pisas un CHARCO ELECTRIFICADO (rojo, con chispas).
   - Tocas un LÁSER rojo encendido (se encienden y apagan).
   - Te caes por un agujero (vuelves al último CHECKPOINT:
     la antena que se pone azul al pasar junto a ella).
@@ -60,5 +60,6 @@ CRÉDITOS
 --------
   Gráficos: "Warped City" de ansimuz (CC0)
   https://ansimuz.itch.io/warped-city
+  Música: Pascal Belisle (incluida en Warped City)
   Sonidos: "Sci-Fi Sounds" de Kenney (CC0)
   Fuente: Orbitron de Matt McInerney (SIL Open Font License)

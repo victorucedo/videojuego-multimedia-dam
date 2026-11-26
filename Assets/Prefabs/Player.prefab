@@ -454,6 +454,7 @@ MonoBehaviour:
   tiempoAturdido: 0.3
   duracionSuperSalto: 8
   alturaVacio: -15
+  tiempoCoyote: 0.12
   sonidoSalto: {fileID: 8300000, guid: 59e780a7102760e48b61a8384c4a5c48, type: 3}
   sonidoDisparo: {fileID: 8300000, guid: 2bfe6e978fc9de648a4504d393c12859, type: 3}
   sonidoDanno: {fileID: 8300000, guid: 8943b2fc55dad1e42b4d0f65b9fadc76, type: 3}

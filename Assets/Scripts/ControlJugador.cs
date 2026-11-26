@@ -20,6 +20,7 @@ public class ControlJugador : MonoBehaviour
     public float tiempoAturdido;
     public float duracionSuperSalto;
     public float alturaVacio;
+    public float tiempoCoyote;
 
     public AudioClip sonidoSalto;
     public AudioClip sonidoDisparo;
@@ -37,6 +38,8 @@ public class ControlJugador : MonoBehaviour
     float contadorAturdido;
     float contadorSuperSalto;
     bool enSueloAntes;
+    float contadorCoyote;
+    bool cortarSalto;
 
     void Start()
     {
@@ -82,10 +85,27 @@ public class ControlJugador : MonoBehaviour
 
     void LeerSalto()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && EstaEnElSuelo())
+        // "Coyote time": un momento después de salir del borde todavía se puede saltar
+        if (EstaEnElSuelo())
+        {
+            contadorCoyote = tiempoCoyote;
+        }
+        else
+        {
+            contadorCoyote -= Time.deltaTime;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space) && contadorCoyote > 0)
         {
             saltando = true;
+            contadorCoyote = 0;
             Sonido.Reproducir(sonidoSalto);
+        }
+
+        // Si suelta Espacio mientras sube, el salto es más corto
+        if (Input.GetKeyUp(KeyCode.Space) && cuerpo.velocity.y > 0)
+        {
+            cortarSalto = true;
         }
     }
 
@@ -214,6 +234,13 @@ public class ControlJugador : MonoBehaviour
                 cuerpo.AddForce(Vector2.up * fuerzaSalto);
             }
             saltando = false;
+        }
+
+        if (cortarSalto)
+        {
+            // Frenamos la subida a la mitad
+            cuerpo.velocity = new Vector2(cuerpo.velocity.x, cuerpo.velocity.y * 0.5f);
+            cortarSalto = false;
         }
 
         if (knockBack != Vector2.zero)
