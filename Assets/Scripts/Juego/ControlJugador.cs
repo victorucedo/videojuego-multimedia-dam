@@ -37,7 +37,6 @@ public class ControlJugador : MonoBehaviour
     float contadorInvencible;
     float contadorAturdido;
     float contadorSuperSalto;
-    bool enSueloAntes;
 
     void Start()
     {
@@ -60,7 +59,6 @@ public class ControlJugador : MonoBehaviour
         ActualizarAnim();
         ActualizarContadores();
         ComprobarVacio();
-        ComprobarAterrizaje();
     }
 
     void LeerMovimiento()
@@ -87,6 +85,8 @@ public class ControlJugador : MonoBehaviour
         {
             saltando = true;
             Sonido.Reproducir(sonidoSalto);
+            // Polvo en los pies al saltar
+            Instantiate(polvo, transform.position + Vector3.down * distCaja, Quaternion.identity);
         }
     }
 
@@ -164,17 +164,6 @@ public class ControlJugador : MonoBehaviour
         {
             sprite.color = Color.white;
         }
-    }
-
-    void ComprobarAterrizaje()
-    {
-        // Si en el frame anterior estaba en el aire y ahora toca el suelo: acaba de aterrizar
-        bool enSuelo = EstaEnElSuelo();
-        if (enSuelo && !enSueloAntes)
-        {
-            Instantiate(polvo, transform.position + Vector3.down * distCaja, Quaternion.identity);
-        }
-        enSueloAntes = enSuelo;
     }
 
     void ComprobarVacio()
